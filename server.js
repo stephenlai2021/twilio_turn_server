@@ -13,6 +13,10 @@ app.use(cors())
 
 const server = http.createServer(app)
 
+app.get('/', (req, res) => {
+  res.json({ message: 'hi, there !' })
+})
+
 app.get('/api/get-turn-credentials', (req, res) => {
   const client = twilio(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN)
   
